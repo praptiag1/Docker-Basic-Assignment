@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Edit Wishlist</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+    <h1>Edit Wishlist</h1>
+    <form action="{{ url_for('edit') }}" method="POST">
+
+        <label for="username">Enter Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        
+        <label for="place">New Favorite Place:</label>
+        <input type="text" id="place" name="place" required><br><br>
+        
+        <label for="food">New Favorite Food:</label>
+        <input type="text" name="food" id="food" required><br><br>
+        
+        <button type="submit">Update</button>
+    </form>
+
+    {% if no_record %}
+        <p style="color: red;">{{ msg }}</p>
+    {% elif edited %}
+        <p style="color: green;">{{ msg }}</p>
+    {% endif %}
+    
+    <a href="{{ url_for('main') }}">Back to Home</a>
+</div>
+</body>
+</html>

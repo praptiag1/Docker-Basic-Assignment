@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add to Wishlist</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+    <h1>Add Your Wishlist</h1>
+    <form action="{{ url_for('save') }}" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        
+        <label for="place">Favorite Place:</label>
+        <input type="text" id="place" name="place" required><br><br>
+        
+        <label for="food">Favorite Food:</label>
+        <input type="text" name="food" id="food" required><br><br>
+        
+        <button type="submit">Save</button>
+    </form>
+
+    {% if user_exists %}
+    <p style="color: red;">User already exists <small>{{ msg }}</small>: <b>{{ username }} : [{{ place }}, {{ food }}]</b></p>
+    {% elif saved %}
+    <p style="color: green"> Successfully saved data for <b>{{username}}</b> with Wishlist <b>{{place}}</b> and <b>{{food}}</b>!!!</p>
+    {% endif %}
+    
+    <a href="{{ url_for('main') }}">Back to Home</a>
+    </div>
+</body>
+</html>

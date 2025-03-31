@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Welcome to Wishlist App</h1>
+    <div class="container">
+    <b> Create and Update your wishlist record here</b><br>
+    <a href="{{ url_for('add_wishlist') }}">Add to Wishlist</a><br>
+    <a href="{{ url_for('fetch_wishlist') }}">Fetch Wishlist</a><br>
+    <a href="{{ url_for('keys') }}">View All Users</a><br>
+    <a href="{{ url_for('edit') }}">Edit Wishlist</a><br>
+    <a href="{{ url_for('delete') }}">Delete Wishlist</a>
+    </div>
+</body>
+</html>
