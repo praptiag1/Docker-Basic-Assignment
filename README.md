@@ -35,13 +35,21 @@ This will start the Flask app, PostgreSQL database, and Redis cache in detached 
 The Project contains 3 custome DockerFiles for web, database and cache services as Dockerfile.web, Dockerfile.db, Dockerfile.cache respectively.
 1. The images are build:
     - docker build -t my-web-app -f Dockerfile.web .
+      ![image](https://github.com/user-attachments/assets/71006542-48db-4cef-b2ab-0733c9e1c5f4)
+
     - docker build -t my-db -f Dockerfile.db .
+      ![image](https://github.com/user-attachments/assets/b402eee5-ca25-4177-805b-8df67b1546a4)
+
     - docker build -t my-redis -f Dockerfile.cache .
+      ![image](https://github.com/user-attachments/assets/d85c8671-b826-417c-babc-fc0ed3ab1788)
+
 2. List images:
    - docker images
      ![image](https://github.com/user-attachments/assets/cd93dcde-e7b8-4004-9e5a-699d143c770a)
 3. Login to docker hub and enter credentials:
    - docker login
+     ![image](https://github.com/user-attachments/assets/fbab0bd5-87fc-477f-be22-4229b80e1e80)
+
 4. Tag images
     - docker tag my-web-app praptiag11/my-web-app:v1.0
     - docker tag my-db praptiag11/my-db:v1.0
@@ -55,8 +63,12 @@ The Project contains 3 custome DockerFiles for web, database and cache services 
 6. Make docker compose YAML file
 7. Run Application:
     - docker compose up -d
+      ![image](https://github.com/user-attachments/assets/665729e6-1cb5-454a-a492-e1163c00cade)
+
 8. List all running containers:
     - docker ps
+      ![image](https://github.com/user-attachments/assets/0d482abe-d15c-4d5c-8c1c-f2900dfe18d7)
+
 9. Access application:
      - http://localhost:5000
 
@@ -90,12 +102,19 @@ All images are pushed to Docker Hub for easy deployment. Pull them using:
 The log of a running container can be seen using:
 - docker logs <container_name>
 
+eg: ![image](https://github.com/user-attachments/assets/fb00fc76-452b-4e5c-aacb-31beeff22b8c)
+
+
 ## Docker network
 New network can be created using 
 - docker network create <network_name>
 List all the network using
 - docker network ls
+   ![image](https://github.com/user-attachments/assets/fea01047-b77e-4cb3-bac7-553fad78e467)
+
 Inspect the network using:
 - docker network inspect <network_name>
+![image](https://github.com/user-attachments/assets/cd379c65-eec0-415e-aed7-5cc5fc5a7c98)
+
 
 
